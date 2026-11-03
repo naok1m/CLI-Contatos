@@ -7,6 +7,8 @@ defmodule AgendaCli.Store do
       {:error, _} -> []
     end
   end
+
   def save(contacts) do
+    File.write!(@file_path, Jason.encode!(contacts, pretty: true))
+  end
 end
-ainda
